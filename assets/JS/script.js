@@ -1,3 +1,6 @@
+
+var pageContentEl = document.querySelector("#page-conent");
+
 var taskIdCounter = 0;
 var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
@@ -92,3 +95,12 @@ var createTaskActions = function (taskId) {
 };
 
 formEl.addEventListener("submit", taskFormHandler);
+
+var taskButtonHandler = function(event) {
+  console.log(event.target);
+
+  if (event.target.matches(".delete-btn")) {
+    console.log("you clicked a delete button!");
+  }
+};
+pageContentEl.addEventListener("click", taskButtonHandler);
